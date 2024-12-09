@@ -1,0 +1,31 @@
+@model EvaluationDeC_.Models.Etudiant
+
+@{
+    ViewData["Title"] = "Cours de l'étudiant";
+}
+
+<h1>Cours de @Model.NomComplet</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nom du cours</th>
+            <th>Heure de début</th>
+            <th>Heure de fin</th>
+            <th>Nombre d'heures</th>
+            <th>Semestre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cours in Model.Cours)
+        {
+            <tr>
+                <td>@cours.Id</td>
+                <td>@cours.HeureDebut</td>
+                <td>@cours.HeureFin</td>
+                <td>@cours.NombreHeures</td>
+                <td>@cours.Semestre</td>
+            </tr>
+        }
+    </tbody>
+</table>

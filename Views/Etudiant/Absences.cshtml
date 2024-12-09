@@ -1,0 +1,25 @@
+@model EvaluationDeC_.Models.Etudiant
+
+@{
+    ViewData["Title"] = "Absences de l'étudiant";
+}
+
+<h1>Absences de @Model.NomComplet</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Cours</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var absence in Model.Absences)
+        {
+            <tr>
+                <td>@absence.Date.ToShortDateString()</td>
+                <td>@absence.Cours.Id</td>
+            </tr>
+        }
+    </tbody>
+</table>
